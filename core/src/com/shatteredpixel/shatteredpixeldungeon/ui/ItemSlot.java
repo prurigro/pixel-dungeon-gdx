@@ -17,9 +17,6 @@
  */
 package com.shatteredpixel.shatteredpixeldungeon.ui;
 
-import com.shatteredpixel.shatteredpixeldungeon.items.keys.IronKey;
-import com.shatteredpixel.shatteredpixeldungeon.items.keys.Key;
-import com.shatteredpixel.shatteredpixeldungeon.items.keys.SkeletonKey;
 import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.ui.Button;
 import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
@@ -49,7 +46,6 @@ public class ItemSlot extends Button<GameAction> {
 	
 	private static final String TXT_STRENGTH	= ":%d";
 	private static final String TXT_TYPICAL_STR	= "%d?";
-    private static final String TXT_KEY_DEPTH	= "*%d";
 	
 	private static final String TXT_LEVEL	= "%+d";
 	
@@ -158,11 +154,8 @@ public class ItemSlot extends Button<GameAction> {
 					
 				}
 				topRight.measure();
-
-			} else if (item instanceof Key && !(item instanceof SkeletonKey)) {
-                topRight.text(Utils.format(TXT_KEY_DEPTH, ((Key) item).depth));
-                topRight.measure();
-            } else {
+				
+			} else {
 				
 				topRight.text( null );
 				
